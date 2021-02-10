@@ -1,5 +1,9 @@
 reference: https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
 
+Very important for this to work:
+In global git config (git config --global -l (list) or -e (edit)), neither user nor credentials should be maintained.
+This should be maintained on local level per repo.
+
 cd ~/.ssh
 ssh-keygen -t rsa -C "personal@mail.com" -f "id_rsa_personal"
 ssh-keygen -t rsa -C "work@mail.com" -f "id_rsa_work"
