@@ -1,0 +1,22 @@
+reference: https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
+
+cd ~/.ssh
+ssh-keygen -t rsa -C "personal@mail.com" -f "id_rsa_personal"
+ssh-keygen -t rsa -C "work@mail.com" -f "id_rsa_work"
+vi ~/.ssh config
+
+# Example
+# Personal account, - the default config
+Host github.com
+   HostName github.com
+   User priv
+   IdentityFile ~/.ssh/id_rsa_personal
+
+# Work account
+Host work.github.com
+   HostName github.com
+   User work
+   IdentityFile ~/.ssh/id_rsa_work
+
+git clone git@github.com:priv/test.git
+git clone git@work.github.com:work/test.git
