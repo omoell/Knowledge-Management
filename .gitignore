@@ -1,0 +1,11 @@
+Jupyter Notebook
+.iynb_checkpoints
+
+Visual Studio Code
+.vscode
+
+PyCharm
+.idea
+
+MacOSX
+.ds_store
