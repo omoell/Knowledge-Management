@@ -1,4 +1,6 @@
 reference: https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/
+important: if after installation of scipy lock is not working anymore: https://github.com/pypa/pipenv/issues/4564#issuecomment-756625303
+
 
 Very important for this to work:
 In global git config (git config --global -l (list) or -e (edit)), neither user nor credentials should be maintained.
