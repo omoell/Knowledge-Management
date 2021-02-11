@@ -1,0 +1,12 @@
+name: udacity
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyterlab
+  - xlrd
+  - ipykernel
+  - matplotlib
+  - numpy
+  - pandas
+  - seaborn

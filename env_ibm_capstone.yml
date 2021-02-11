@@ -1,0 +1,20 @@
+name: ibm_capstone
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - folium
+  - ipykernel
+  - lxml
+  - matplotlib=3.0.3
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  - seaborn
+  - statsmodels
+  - geopandas
+  - geopy
+prefix: /home/hakhik/miniconda3/envs/ibm_capstone
+

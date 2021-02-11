@@ -1,0 +1,28 @@
+# Setup git in command line with ssh token
+
+1) ensure that git is installed (sudo apt-get install git)
+2) generate a new ssh key
+	ssh-keygen -t rsa -b 4096 -C "<your email address>"
+	confirm folder "~/.ssh/id_rsa"
+	confirm empty passphrase
+3) add the ssh key to the ssh-agent
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
+4) add the key to the github account
+	cat ~/.ssh/id_rsa.pub
+	insert key on the github website in personal settings -> ssh and gpg keys -> new ssh key
+	name of the key should describe the machine, which is used for this ssh key
+	
+	
+Use git:
+
+1) Make changes, e.g. create new file python_code.py
+2) git status
+	shows changes in the repository
+2) git add python_code.py
+	stages the changes
+3) git commit - m <message>
+	commits the changes and adds a message
+4) git push
+	pushes the changes to the central repository
+	or use "git push origin master"

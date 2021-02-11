@@ -1,0 +1,30 @@
+WSL SETUP
+======================================================
+For release-upgrade:
+	sudo do-release-upgrade
+
+	If some packages were kept back from updating:
+	sudo apt-get --with-new-pkgs upgrade
+
+Setup tmux:
+	Edit ~/.bashrc and add:
+	# launch tmux at startup and exit ssh / connection outside of tmux
+	# if terminal should not close when exiting tmux, remove exit command
+	[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+	
+	
+TERMINAL COLOR SETUP
+======================================================
+Terminal Colors:
+!! IMPORTANT !! Close tmux before installing. Otherwise it will not work.
+
+https://github.com/Mayccoll/Gogh
+execute in terminal: bash -c "$(wget -qO- https://git.io/vQgMr)"
+standard themes to be installed: 58 34 53 100 101 
+
+
+MANJARO WIFI FIX
+======================================================
+Download: http://support.killernetworking.com/K1535_Debian/board.bin
+
+and put it in the /lib/firmware/ath10k/QCA6174/hw3.0/ folder (create the folder if it doesn’t exist)

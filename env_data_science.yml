@@ -1,0 +1,20 @@
+name: data_science
+channels:
+   - conda-forge
+dependencies:
+   - matplotlib
+   - scikit-learn
+   - pandas
+   - jupyterlab
+   - jupyterlab-git
+   - ipykernel
+   - numpy
+   - seaborn
+   - nodejs
+   - regex
+   - statsmodels
+   - psycopg2
+   - ipython-sql
+   - altair
+   - folium
+   - scipy

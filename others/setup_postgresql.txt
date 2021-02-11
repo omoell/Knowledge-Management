@@ -1,0 +1,31 @@
+**LINUX**
+sudo apt-get install postgresql
+
+sudo service postgresql start
+sudo passwd postgres
+sudo -u postgres psql
+
+
+
+To start service (needs to be done after each reboot!):
+sudo service postgresql start
+sudo -u postgres psql
+
+Alternative:
+su - postgres
+psql
+
+To create alias:
+cd ~
+sudo nano .profile
+alias pgstart='sudo service postgresql start'
+alias pgrun='sudo -u postgres psql'
+
+
+**PYTHON**
+conda install -c anaconda psycopg2
+conda install -c conda-forge ipython-sql
+
+**WINDOWS**
+install pgAdmin or Adminer (PHP required - how does it work?)
+address of server = localhost

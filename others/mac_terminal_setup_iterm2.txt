@@ -1,0 +1,17 @@
+*Prerequisites:*
+- iterm2 as terminal
+- zsh as primary shell
+- brew installed
+
+*Execute:*
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+brew install romkatv/powerlevel10k/powerlevel10k
+echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+
+restart term
+Go through configuration process of Powerlevel10k
+!! Important: Install Meslo Nerd Font !!
+
+*For a nice color theme:*
+https://github.com/morhetz/gruvbox-contrib/tree/master/iterm2

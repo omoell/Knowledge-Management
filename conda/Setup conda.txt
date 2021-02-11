@@ -1,0 +1,51 @@
+Define priority channel for conda installation:
+	conda config --add channels conda-forge
+	conda config --set channel_priority strict
+	conda config --describe channel_priority # to view channel_priority
+
+Create conda environment with yml file:
+	Create yml file:
+		conda env export --from-history > environment.yml
+	Create environment with yml:
+		conda env create -f environment.yml
+	
+Install and setup jupyterlab:
+	conda install -c conda-forge jupyterlab jupyterlab-git nodejs
+	# if jupyterlab-git not working: jupyter serverextension enable --py jupyterlab_git
+	jupyter lab --generate-config
+	
+	Edit in ~/.jupyter/ the jupyter config file:
+		c.NotebookApp.notebook_dir = '/mnt/c/Users/omoel/OneDrive/'
+		c.NotebookApp.password_required = False
+		## only for WSL2
+		create sh script in /etc/profile.d/ with following code ('jupyerlab_ip.sh'):
+		# WSL2 is receiving a new ip-address after each reboot. As it is running in a separate kernel, the ip-address \
+		  needs to be updated in the jupyerlab configuration file, so that the link in bash is showing the correct address
+			#!/bin/sh
+			NEW_IP="$(hostname -I)"
+			NEW_IP=${NEW_IP%?}
+			sed -i -e "s/^c.NotebookApp.ip.*/c.NotebookApp.ip='$NEW_IP'/" ~/.jupyter/jupyter_notebook_config.py
+
+Install new kernel for jupyter-lab:
+	conda activate myenv
+		python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+
+
+Special modules:
+=================================================================		
+For visualising geo data:
+	conda install -c conda-forge folium
+
+As alternative for seaborn and matplotlib:
+	conda install -c conda-forge altair
+	
+=================================================================	
+If not working with environment.yml:
+	Install other data-science related modules
+		conda create --name data_science
+		conda activate data_science # if following modules should be installed in this env
+			conda install -c conda-forge scipy regex numpy pandas seaborn statsmodels scikit-learn
+			conda install -c conda-forge matplotlib=3.0.3
+			conda install -c conda-forge ipykernel
+		conda deactivate
+		# Maybe additional for "read_excel" function of pandas: conda install -c anaconda xlrd
