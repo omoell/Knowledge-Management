@@ -1,0 +1,10 @@
+Install rclone and configure a new remote:
+[paperless]
+type = crypt
+remote = /folder/which/is/synched/to/cloud
+password = whatever
+password2 = whatever
+
+Create task:
+sudo docker exec paperless-ngx-webserver-1 document_exporter ../export -d
+rclone sync /volume1/docker/paperless-ngx/export/ paperless:
